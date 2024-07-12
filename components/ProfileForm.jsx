@@ -10,7 +10,6 @@ import Stepper from './Stepper';
 import PersonalDetails from './PersonalDetails';
 import SkillsAspirations from './SkillsAspirations';
 import Portfolio from './Portfolio';
-import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 
 
@@ -46,6 +45,7 @@ const ProfileForm = () => {
 
     const onSubmit = async (values) => {
         const isValid = await form.trigger(Object.keys(getSchema(currentStep).shape));
+        console.log(isValid);
         if (isValid) {
             updateFormData(values); // Update context with final form data
             console.log(values);
@@ -85,7 +85,7 @@ const ProfileForm = () => {
                         )}
 
                         {/* next */}
-                        { currentStep === 2 ? (
+                        { currentStep === steps.length - 1 ? (
                             <Button onClick={form.handleSubmit(onSubmit)} >Submit</Button>
                         ) : (
                             <Button onClick={next}> Next</Button>

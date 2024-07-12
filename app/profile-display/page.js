@@ -45,9 +45,11 @@ const ProfileDisplay = () => {
                             {profileData.firstName} {profileData.lastName}
                         </h2>
                         <div className='flex justify-between gap-20'>
-                            <p className="text-lg text-gray-600">{profileData.primaryRole}</p>
-                            <Badge variant="secondary" className="text-md font-medium px-5 text-gray-600"> { profileData.workAvailability ? "Available for work" : "Not avaiable for work" }</Badge>
-                            <Badge variant="secondary" className="text-md font-medium px-5 text-gray-600"> {profileData.location}</Badge>
+                            <div className='flex justify-start gap-4'>
+                                <p className="text-lg text-gray-600">{profileData.primaryRole}</p>
+                                <Badge variant="secondary" className="text-md font-medium px-5 text-gray-600"> {profileData.location}</Badge>
+                            </div>
+                                <Badge variant="secondary" className="text-md font-medium px-5 text-gray-600"> { profileData.workAvailability ? "Available for work" : "Not avaiable for work" }</Badge>
 
                         </div>
 
