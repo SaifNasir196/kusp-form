@@ -32,7 +32,9 @@ const ProfileDisplay = () => {
                             className="rounded-full"
                         />
                         ) : (
-                            <span className='text-white text-5xl'> {profileData?.firstName[0]}</span>
+                            <span className='text-white text-5xl'> 
+                                {profileData?.firstName !== undefined ? profileData?.firstName[0] : 'A'}
+                            </span>
                         )}
                     </div>
 
@@ -42,10 +44,10 @@ const ProfileDisplay = () => {
                         <h2 className="text-3xl font-bold mb-2">
                             {profileData.firstName} {profileData.lastName}
                         </h2>
-                        <div className='flex justify-between'>
+                        <div className='flex justify-between gap-20'>
                             <p className="text-lg text-gray-600">{profileData.primaryRole}</p>
-                            <Badge variant="secondary" className="text-lg text-gray-600"> {}</Badge>
-                            <Badge variant="secondary" className="text-lg text-gray-600"> {profileData.location}</Badge>
+                            <Badge variant="secondary" className="text-md font-medium px-5 text-gray-600"> { profileData.workAvailability ? "Available for work" : "Not avaiable for work" }</Badge>
+                            <Badge variant="secondary" className="text-md font-medium px-5 text-gray-600"> {profileData.location}</Badge>
 
                         </div>
 

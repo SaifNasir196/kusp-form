@@ -7,6 +7,7 @@ import CustomFileInput from './CustomFileInput'
 import { Switch } from "@/components/ui/switch"
 import CustomSwitch from './CustomSwitch'
 import CustomTagsInput from './CustomTagsInput'
+import CustomFileInput2 from './CustomFileInput2'
 
 
 
@@ -22,7 +23,8 @@ const SkillsAspirations = ({ control }) => {
 
         </div>
             
-        <CustomFileInput control={control} name="CV" label="CV" placeholder="Upload CV" />
+        {/* <CustomFileInput control={control} name="CV" label="Click to upload CV" /> */}
+        <CustomFileInput2 control={control} name="CV" multiple={false} />
 
         <CustomSwitch control={control} name="workAvailability" label="Available for Work" description="Check if you are available for work"/>
       </div>
